@@ -1,0 +1,14 @@
+body {  
+    background: #8568eb;
+}
+
+main {
+margin-inline: auto;
+width: 40em;
+}
+
+main img {
+
+    width: 100%;
+  display: block;
+}
