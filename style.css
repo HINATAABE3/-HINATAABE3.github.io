@@ -1,14 +1,113 @@
-body {  
-    background: #8568eb;
+/* 
+https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css
+*/
+
+/* Load Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+/* Diagnostic */
+
+/* Style Tile with css variables */
+:root {
+  --color1: royalblue;
+  --color2: magenta;
+  --font1: "Rubik", sans-serif;
+  --font2: "Libre Baskerville", serif;
 }
 
+/* wrapper */
 main {
-margin-inline: auto;
-width: 40em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  font-family: var(--font1);
 }
 
-main img {
+article {
+  /*  background image */
+  background-image: url("https://assets.codepen.io/16425/paper.png");
+}
 
-    width: 100%;
-  display: block;
+/* on hover left colum, no background image */
+article: hover {
+  background-image: none;
+}
+
+h1 {
+  font-size: 30px;
+  font-family: var(--font2);
+}
+
+p {
+  animation-delay: 3s;
+}
+
+/* Article */
+article {
+  display: flex;
+  flex-direction: column;
+  /* main axis   */
+  justify-content: center;
+  /* cross axis   */
+  align-items: center;
+
+  padding: 2em;
+}
+
+/* aside image */
+img {
+  width: 100%;
+  max-width: 100%;
+
+  /* full height     */
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Drop Cap */
+p span {
+  float: top left;
+  font-size: 4em;
+  color: var(--color1);
+  animation-name: fadeInUpBig;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+  margin: 12px;
+}
+
+/* links */
+a:link,
+a:visited {
+  color: var(--color2);
+  text-decoration: none;
+  margin: 0 0.25em;
+}
+
+a:hover,
+a:active {
+  border-bottom: 4px solid var(--color1);
+}
+
+@media (max-width: 480px) {
+  body {
+    background: gold;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  article nav a {
+    display: block;
+    margin: 1em 0 1em 0;
+  }
+
+  p span {
+    float: none;
+    font-size: 1em;
+  }
 }
